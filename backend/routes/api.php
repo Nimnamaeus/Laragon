@@ -20,12 +20,15 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+    /*Carousel*/
 Route::get('/carousel', [CarouselItemsController::class, 'index']);
 Route::get('/carousel/{id}', [CarouselItemsController::class, 'show']);
 Route::delete('/carousel/{id}', [CarouselItemsController::class, 'destroy']);
 Route::post('/carousel', [CarouselItemsController::class, 'store']);
-
+Route::put('/carousel/{id}', [CarouselItemsController::class, 'update']);
+    /*User*/
 Route::get('/users', [UserController::class, 'index']);
 Route::get('/users/{id}', [UserController::class, 'show']);
 Route::post('/users', [UserController::class, 'store']);
 Route::delete('/users/{id}', [UserController::class, 'destroy']);
+Route::put('/users/{id}', [UserController::class, 'update']);
