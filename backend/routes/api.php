@@ -29,6 +29,8 @@ Route::put('/carousel/{id}', [CarouselItemsController::class, 'update']);
     /*User*/
 Route::get('/users', [UserController::class, 'index']);
 Route::get('/users/{id}', [UserController::class, 'show']);
-Route::post('/users', [UserController::class, 'store']);
+Route::post('/users', [UserController::class, 'store'])->name('users.store');
 Route::delete('/users/{id}', [UserController::class, 'destroy']);
-Route::put('/users/{id}', [UserController::class, 'update']);
+Route::put('/users/{id}', [UserController::class, 'update'])->name('users.update');
+Route::put('/users/email/{id}', [UserController::class, 'email'])->name('users.email');
+Route::put('/users/password/{id}', [UserController::class, 'password'])->name('users.password');
